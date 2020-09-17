@@ -25,7 +25,7 @@ SECRET_KEY = '!f8fb)_8*qlqo=z0!$e+!ye7g(p%!x57xlewe23b(#r61b+emn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mixfruitcandy.herokuapp.com','*']
 
 
 # Application definition
