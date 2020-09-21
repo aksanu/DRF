@@ -25,4 +25,5 @@ class customerSerializer(serializers.Serializer):
 		instance.name= validated_data.get('name', instance.name)
 		instance.mobileNumber= validated_data.get('mobileNumber', instance.mobileNumber)
 		instance.address= validated_data.get('address', instance.address)
+		instance.save()
 		return instance
