@@ -12,11 +12,12 @@ class customerSerializer(serializers.Serializer):
 		v= str(value)
 		if len(v)<5:
 			raise serializers.ValidationError('Mobile Number Length should not be less than 5')
+		return value
 
 	def validate_name(self,value):
 		if value == 'Ankit' or value == 'ankit':
 			raise serializers.ValidationError("Sorry he's a developer...You can't use his name")
-
+		return value
 
 	def create(self,validated_data):
 		return Customer.objects.create(**validated_data)
@@ -25,4 +26,5 @@ class customerSerializer(serializers.Serializer):
 		instance.name= validated_data.get('name', instance.name)
 		instance.mobileNumber= validated_data.get('mobileNumber', instance.mobileNumber)
 		instance.address= validated_data.get('address', instance.address)
+		instance.save()
 		return instance
